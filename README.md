@@ -4,10 +4,12 @@
 - Login as admin or user
 - Admin can add course
 - It will give live link for video
-- Sign in users can watch video only.
+- Sign in users can watch video       only.
 
 ### Tech Stack
 - Next Js for frontend.
 - Nodejs for backend.
 - Aws for storage.
 - Clerk Authentication.
+- Convex
+
