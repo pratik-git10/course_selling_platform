@@ -1,8 +1,13 @@
+"use client";
+
 import { Bell, BookOpen } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
 const NonDashboardNavbar = () => {
+  const submitHandler = () => {
+    alert("Currently working on Notification Panel");
+  };
   return (
     <nav className="w-full flex justify-center bg-customgreys-primarybg">
       <div className="flex justify-between items-center w-3/4 py-8">
@@ -29,7 +34,9 @@ const NonDashboardNavbar = () => {
         </div>
       </div>
       <div className="flex items-center gap-2 sm:gap-4">
-        <button className=" relative w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center">
+        <button
+          onClick={submitHandler}
+          className=" relative w-7 h-7 sm:w-8 sm:h-8 bg-gray-800 rounded-full flex items-center justify-center">
           <span className="absolute top-0 right-0 bg-blue-500 h-1.5 sm:h-2 w-1.5 sm:w-2 rounded-full"></span>
           <Bell className="text-gray-400 w-4 h-4 sm:w-5 sm:h-5" />
         </button>
