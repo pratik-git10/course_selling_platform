@@ -43,6 +43,7 @@ const dynamoose = __importStar(require("dynamoose"));
 const morgan_1 = __importDefault(require("morgan"));
 const helmet_1 = __importDefault(require("helmet"));
 const body_parser_1 = __importDefault(require("body-parser"));
+const courseRoute_1 = __importDefault(require("./routes/courseRoute"));
 dotenv_1.default.config();
 const isProduction = process.env.NODE_ENV === "production";
 if (!isProduction) {
@@ -59,6 +60,7 @@ app.use(helmet_1.default.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.get("/", (req, res) => {
     res.send("Hello");
 });
+app.use("/courses", courseRoute_1.default);
 const port = process.env.PORT || 3001;
 if (!isProduction) {
     app.listen(port, () => {

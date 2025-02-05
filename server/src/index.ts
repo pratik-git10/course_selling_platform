@@ -5,7 +5,7 @@ import * as dynamoose from "dynamoose";
 import morgan from "morgan";
 import helmet from "helmet";
 import bodyParser from "body-parser";
-
+import courseRoute from "./routes/courseRoute";
 dotenv.config();
 
 const isProduction = process.env.NODE_ENV === "production";
@@ -26,6 +26,7 @@ app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.get("/", (req, res) => {
   res.send("Hello");
 });
+app.use("/courses", courseRoute);
 
 const port = process.env.PORT || 3001;
 
